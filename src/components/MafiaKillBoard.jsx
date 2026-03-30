@@ -51,19 +51,19 @@ export function MafiaKillBoardModal({
           <div className="flex items-center justify-center gap-3 mb-2">
             <Skull className="w-8 h-8" />
             <h1 className="text-3xl font-black tracking-tighter uppercase">
-              킬링 보드
+              Kill Board
             </h1>
           </div>
           <div className="h-1 w-16 bg-black mx-auto mb-3" />
           <p className="text-xs font-bold uppercase tracking-widest text-zinc-600">
-            오늘 밤 제거할 플레이어를 선택하세요
+            Choose a player to eliminate tonight
           </p>
 
           {/* Shared team target badge */}
           {sharedTargetName && (
             <div className="mt-3 inline-flex items-center gap-2 border-2 border-black rounded-xl px-3 py-1.5 bg-zinc-100">
               <span className="text-xs font-black uppercase tracking-widest">
-                팀 선택:
+                Team Pick:
               </span>
               <span className="text-sm font-black">🎯 {sharedTargetName}</span>
             </div>
@@ -98,10 +98,10 @@ export function MafiaKillBoardModal({
             className="w-full py-4 px-6 bg-white border-2 border-black text-black font-black uppercase tracking-widest rounded-xl shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[12px_12px_0px_0px_rgba(0,0,0,1)] hover:bg-black hover:text-white transition-all flex items-center justify-center gap-3 text-base group active:translate-y-0 active:translate-x-0 active:shadow-none font-[inherit] cursor-pointer"
           >
             <Skull className="w-5 h-5 transition-transform group-hover:scale-125" />
-            {localPlayer ? `${localPlayer.nickname} 제거` : "제거"}
+            {localPlayer ? `Eliminate ${localPlayer.nickname}` : "Eliminate"}
           </button>
           <span className="text-black bg-white border-2 border-black px-4 py-1.5 rounded-xl text-[10px] font-black uppercase tracking-widest shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
-            타이머 종료 시 마지막 선택이 처형됩니다
+            Last selection will be executed when the timer runs out
           </span>
         </div>
       </div>

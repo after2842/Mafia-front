@@ -13,7 +13,7 @@ export function MafiaCard() {
           <div className="px-4 py-2 bg-red-600 border-2 border-black rounded-full flex items-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <Moon className="w-5 h-5 text-white" />
             <span className="text-sm font-black tracking-widest text-white uppercase">
-              밤 역할
+              Night Role
             </span>
           </div>
           <div className="p-2 bg-white border-2 border-black rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform group-hover:scale-110">
@@ -33,20 +33,20 @@ export function MafiaCard() {
         <div className="flex flex-col gap-3 bg-white border-2 border-black p-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           <div>
             <h2 className="text-3xl font-black text-black tracking-tight uppercase leading-none">
-              마피아
+              Mafia
             </h2>
             <p className="text-red-600 font-bold tracking-widest uppercase text-xs flex items-center gap-2 mt-1">
               <span className="w-2 h-2 rounded-none bg-red-600 border border-black animate-pulse" />
-              악당 진영
+              Evil Team
             </p>
           </div>
 
           <div className="border-t-2 border-black pt-2">
             <p className="text-black text-xs font-bold leading-snug uppercase tracking-wide">
-              밤마다 마피아끼리 의논하여 시민 한 명을 제거합니다.
+              Each night, the Mafia discusses and eliminates one citizen.
               <br />
               <br />
-              낮에는 시민인 척 의심을 피하며 살아남으세요.
+              During the day, blend in as a citizen and survive.
             </p>
           </div>
         </div>

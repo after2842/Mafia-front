@@ -28,8 +28,8 @@ export default function VotePhase({ gameState, playerId, ws, phase }) {
       {/* ── Day preview (vote tab opened before vote phase) ── */}
       {phase === 'day' && (
         <div className="w-full max-w-lg mx-auto bg-white border-2 border-black rounded-xl p-5 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
-          <h2 className="text-2xl font-black text-black uppercase tracking-tight mb-1">투표</h2>
-          <p className="text-zinc-500 font-medium text-sm mb-5">낮 토론이 끝나면 투표가 시작됩니다</p>
+          <h2 className="text-2xl font-black text-black uppercase tracking-tight mb-1">Vote</h2>
+          <p className="text-zinc-500 font-medium text-sm mb-5">Voting begins after daytime discussion ends</p>
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5">
             {alivePlayers.map(p => (
               <div key={p.id} className="flex items-center p-3 rounded-xl border-2 border-dashed border-zinc-300 opacity-60">
@@ -54,7 +54,7 @@ export default function VotePhase({ gameState, playerId, ws, phase }) {
           />
           {voted && (
             <div className="mt-3 text-xs text-teal-600 text-center font-black uppercase tracking-widest">
-              ✓ 투표 완료 — 다른 플레이어를 기다리는 중...
+              ✓ Vote cast — waiting for other players...
             </div>
           )}
         </>
@@ -63,15 +63,15 @@ export default function VotePhase({ gameState, playerId, ws, phase }) {
       {/* ── Last defense waiting screen ── */}
       {phase === 'last_defense' && (
         <div className="w-full max-w-lg mx-auto bg-white border-2 border-black rounded-xl p-6 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] text-center">
-          <p className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-3">최후 변론</p>
+          <p className="text-xs font-black uppercase tracking-widest text-zinc-500 mb-3">Final Defense</p>
           <h2 className="text-3xl font-black text-black uppercase tracking-tighter mb-2">
             {voteTarget?.nickname}
           </h2>
           <p className="text-sm font-bold text-zinc-600 uppercase tracking-wide">
-            님의 변론을 직접 들어주세요.
+            Please listen to their defense.
           </p>
           <p className="mt-4 text-xs font-bold text-zinc-400 uppercase tracking-widest">
-            변론이 끝나면 투표가 시작됩니다
+            Voting begins after the defense ends
           </p>
         </div>
       )}

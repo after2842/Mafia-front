@@ -1,6 +1,6 @@
 import { FinalResultCard } from './FinalResult'
 
-const ROLE_KO = { mafia: '마피아', journalist: '기자', citizen: '시민' }
+const ROLE_LABEL = { mafia: 'Mafia', journalist: 'Journalist', citizen: 'Citizen' }
 
 function toTeam(role) {
   return role === 'mafia' ? 'mafia' : 'citizen'
@@ -13,7 +13,7 @@ export default function GameOver({ gameState }) {
   const players = allPlayers.map((p) => ({
     id: p.id || p.nickname,
     name: p.nickname,
-    role: ROLE_KO[p.role] || p.role,
+    role: ROLE_LABEL[p.role] || p.role,
     team: toTeam(p.role),
     status: p.alive ? 'alive' : 'dead',
   }))

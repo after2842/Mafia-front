@@ -12,10 +12,10 @@ export function PlayerVotingCard({
   return (
     <div className="w-full max-w-lg mx-auto bg-white border-2 border-black rounded-xl p-5 shadow-[8px_8px_0px_0px_rgba(0,0,0,1)]">
       <h2 className="text-2xl font-black text-black uppercase tracking-tight mb-1">
-        투표
+        Vote
       </h2>
       <p className="text-zinc-500 font-medium text-sm mb-5">
-        투표로 처형할 플레이어를 선택하세요
+        Select a player to execute by vote
       </p>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-2.5 mb-5">
@@ -64,7 +64,7 @@ export function PlayerVotingCard({
                       isSelected ? "text-zinc-300" : "text-zinc-500"
                     }`}
                   >
-                    {count}표
+                    {count} votes
                   </span>
                 )}
               </div>
@@ -90,7 +90,7 @@ export function PlayerVotingCard({
             : "bg-white text-black border-black shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] hover:-translate-y-1 hover:-translate-x-1 hover:shadow-[8px_8px_0px_0px_rgba(0,0,0,1)] active:translate-y-0 active:translate-x-0 active:shadow-none"
         }`}
       >
-        {isVoting ? "투표 중..." : selectedId ? "투표하기" : "플레이어 선택"}
+        {isVoting ? "Voting..." : selectedId ? "Cast Vote" : "Select Player"}
       </button>
     </div>
   );

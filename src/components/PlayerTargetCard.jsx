@@ -19,12 +19,12 @@ export function PlayerTargetCard({ username, isSelected, isTeamTarget, onSelect 
       </span>
       {isSelected && (
         <span className="flex items-center gap-1 text-[10px] font-bold tracking-widest text-zinc-400 uppercase">
-          <Crosshair size={10} /> 내 선택
+          <Crosshair size={10} /> My Pick
         </span>
       )}
       {isTeamTarget && !isSelected && (
         <span className="text-[10px] font-bold tracking-widest text-zinc-400 uppercase">
-          팀 선택
+          Team Pick
         </span>
       )}
     </button>

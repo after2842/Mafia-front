@@ -13,7 +13,7 @@ export function CitizenCard() {
           <div className="px-4 py-2 bg-amber-400 border-2 border-black rounded-full flex items-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <Sun className="w-5 h-5 text-black" />
             <span className="text-sm font-black tracking-widest text-black uppercase">
-              낮 역할
+              Day Role
             </span>
           </div>
           <div className="p-2 bg-white border-2 border-black rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform group-hover:scale-110">
@@ -33,20 +33,20 @@ export function CitizenCard() {
         <div className="flex flex-col gap-3 bg-white border-2 border-black p-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           <div>
             <h2 className="text-3xl font-black text-black tracking-tight uppercase leading-none">
-              시민
+              Citizen
             </h2>
             <p className="text-amber-500 font-bold tracking-widest uppercase text-xs flex items-center gap-2 mt-1">
               <span className="w-2 h-2 rounded-none bg-amber-500 border border-black animate-pulse" />
-              시민 진영
+              Town Team
             </p>
           </div>
 
           <div className="border-t-2 border-black pt-2">
             <p className="text-black text-xs font-bold leading-snug uppercase tracking-wide">
-              밤에는 특별한 능력이 없습니다. 무사히 아침을 맞이하길 바랍니다.
+              You have no special abilities at night. Hope you make it through safely.
               <br />
               <br />
-              낮에는 토론과 투표로 마피아를 찾아내어 마을을 지켜주세요!
+              During the day, find the Mafia through discussion and voting to protect the town!
             </p>
           </div>
         </div>

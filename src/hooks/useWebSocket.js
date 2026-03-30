@@ -18,9 +18,16 @@ export function useWebSocket() {
   const connect = useCallback((roomId, nickname) => {
     if (wsRef.current?.readyState === WebSocket.OPEN) return
 
-    const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
-    const host = window.location.host
-    const url = `${protocol}//${host}/ws/${roomId}?nickname=${encodeURIComponent(nickname)}`
+    const backendUrl = import.meta.env.VITE_BACKEND_URL
+    let url
+    if (backendUrl) {
+      const wsBase = backendUrl.replace(/^http/, 'ws')
+      url = `${wsBase}/ws/${roomId}?nickname=${encodeURIComponent(nickname)}`
+    } else {
+      const protocol = window.location.protocol === 'https:' ? 'wss:' : 'ws:'
+      const host = window.location.host
+      url = `${protocol}//${host}/ws/${roomId}?nickname=${encodeURIComponent(nickname)}`
+    }
 
     const ws = new WebSocket(url)
     wsRef.current = ws

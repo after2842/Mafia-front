@@ -201,7 +201,7 @@ export default function Lobby({ gameState, isHost, playerId, ws, roomId }) {
               </h2>
               <div className="px-4 py-2 bg-white border-2 border-black rounded-xl shadow-[2px_2px_0_0_rgba(0,0,0,1)] flex items-center gap-2">
                 <span className="text-2xl font-black leading-none">
-                  {players.length} 명
+                  {players.length}
                 </span>
               </div>
             </div>

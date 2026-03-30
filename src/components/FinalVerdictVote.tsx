@@ -27,10 +27,10 @@ export function DefenseVotingCard({
           </div>
           <div>
             <h2 className="text-2xl font-black text-black tracking-tighter uppercase leading-none">
-              최후 변론
+              Final Defense
             </h2>
             <p className="text-red-500 font-bold tracking-widest uppercase text-xs mt-2">
-              {name}님은 유죄입니까?
+              Is {name} guilty?
             </p>
           </div>
         </div>
@@ -38,7 +38,7 @@ export function DefenseVotingCard({
         {/* Instruction */}
         <div className="bg-white border-2 border-black p-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           <p className="text-black text-sm font-bold leading-snug uppercase tracking-wide text-center">
-            변론을 직접 들으신 후 처형 또는 석방에 투표해 주세요.
+            After hearing the defense, vote to execute or pardon.
           </p>
         </div>
 
@@ -51,7 +51,7 @@ export function DefenseVotingCard({
           >
             <ThumbsDown className="w-8 h-8 text-black group-hover:scale-110 transition-transform" />
             <span className="font-black text-xl uppercase tracking-widest">
-              처형
+              Execute
             </span>
           </button>
 
@@ -62,7 +62,7 @@ export function DefenseVotingCard({
           >
             <ThumbsUp className="w-8 h-8 text-black group-hover:scale-110 transition-transform" />
             <span className="font-black text-xl uppercase tracking-widest">
-              석방
+              Pardon
             </span>
           </button>
         </div>
@@ -70,7 +70,7 @@ export function DefenseVotingCard({
         {/* Voted confirmation */}
         {voted && (
           <p className="text-center text-xs font-black uppercase tracking-widest text-zinc-500">
-            ✓ 투표 완료 — 다른 플레이어를 기다리는 중...
+            ✓ Vote cast — waiting for other players...
           </p>
         )}
       </div>

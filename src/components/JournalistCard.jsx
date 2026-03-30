@@ -13,7 +13,7 @@ export function JournalistCard() {
           <div className="px-4 py-2 bg-blue-500 border-2 border-black rounded-full flex items-center gap-2 shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
             <Moon className="w-5 h-5 text-white" />
             <span className="text-sm font-black tracking-widest text-white uppercase">
-              밤 역할
+              Night Role
             </span>
           </div>
           <div className="p-2 bg-white border-2 border-black rounded-full shadow-[4px_4px_0px_0px_rgba(0,0,0,1)] transition-transform group-hover:scale-110">
@@ -33,20 +33,20 @@ export function JournalistCard() {
         <div className="flex flex-col gap-3 bg-white border-2 border-black p-4 rounded-xl shadow-[4px_4px_0px_0px_rgba(0,0,0,1)]">
           <div>
             <h2 className="text-3xl font-black text-black tracking-tight uppercase leading-none">
-              기자
+              Journalist
             </h2>
             <p className="text-blue-600 font-bold tracking-widest uppercase text-xs flex items-center gap-2 mt-1">
               <span className="w-2 h-2 rounded-none bg-blue-600 border border-black animate-pulse" />
-              시민 진영
+              Town Team
             </p>
           </div>
 
           <div className="border-t-2 border-black pt-2">
             <p className="text-black text-xs font-bold leading-snug uppercase tracking-wide">
-              밤마다 한 명을 수사하여 그 역할을 몰래 확인합니다.
+              Each night, investigate one person to secretly learn their role.
               <br />
               <br />
-              낮에는 수사 결과를 활용해 마피아를 추리하고 마을을 이끌어 가세요.
+              During the day, use your findings to deduce the Mafia and lead the town.
             </p>
           </div>
         </div>

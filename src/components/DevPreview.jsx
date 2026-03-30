@@ -12,35 +12,35 @@ import { EventCard } from './EventCards'
 const mockWs = { send: (data) => console.log('[mock ws]', data) }
 
 const MOCK_PLAYERS = [
-  { id: 'p1', nickname: '철수' },
-  { id: 'p2', nickname: '영희' },
-  { id: 'p3', nickname: '민준' },
-  { id: 'p4', nickname: '지수' },
+  { id: 'p1', nickname: 'James' },
+  { id: 'p2', nickname: 'Sarah' },
+  { id: 'p3', nickname: 'Mike' },
+  { id: 'p4', nickname: 'Lily' },
 ]
 
 const BASE_GAME_STATE = {
   round: 2,
   alive_players: MOCK_PLAYERS,
-  current_quiz: { question: '다윗이 골리앗을 쓰러뜨린 무기는?' },
+  current_quiz: { question: 'What weapon did David use to defeat Goliath?' },
   my_quiz_score: 3,
   quiz_taken: false,
-  mafia_current_target: '영희',
+  mafia_current_target: 'Sarah',
   morning_report: [
-    '💀 철수님이 마피아에 의해 제거되었습니다',
-    '생존자들은 아침을 맞이했습니다',
+    '💀 James was eliminated by the Mafia',
+    'The survivors have made it to morning',
   ],
-  vote_target: { id: 'p2', nickname: '영희' },
+  vote_target: { id: 'p2', nickname: 'Sarah' },
   vote_counts: { p2: 2, p3: 1 },
   winner: null,
   all_players: [
-    { id: 'p1', nickname: '철수', role: 'mafia', alive: false },
-    { id: 'p2', nickname: '영희', role: 'citizen', alive: true },
-    { id: 'p3', nickname: '민준', role: 'journalist', alive: true },
-    { id: 'p4', nickname: '지수', role: 'citizen', alive: true },
+    { id: 'p1', nickname: 'James', role: 'mafia', alive: false },
+    { id: 'p2', nickname: 'Sarah', role: 'citizen', alive: true },
+    { id: 'p3', nickname: 'Mike', role: 'journalist', alive: true },
+    { id: 'p4', nickname: 'Lily', role: 'citizen', alive: true },
   ],
 }
 
-const MOCK_NIGHT_ANSWERS = ['돌팔매', '새총', '물맷돌']
+const MOCK_NIGHT_ANSWERS = ['Sling', 'Slingshot', 'Stone']
 
 // ── Phone frame: contains fixed-position children via CSS transform trick ──
 function PhoneFrame({ children }) {
@@ -80,7 +80,7 @@ function RoleCardsTab() {
               role === r ? 'bg-white text-black border-white' : 'bg-transparent text-gray-400 border-gray-600'
             }`}
           >
-            {r === 'mafia' ? '마피아' : r === 'citizen' ? '시민' : '기자'}
+            {r === 'mafia' ? 'Mafia' : r === 'citizen' ? 'Citizen' : 'Journalist'}
           </button>
         ))}
       </div>
@@ -96,16 +96,16 @@ function RoleCardsTab() {
                 className="w-full max-w-[320px] px-4 py-3 rounded-lg text-sm font-semibold bg-[#4361ee] text-white"
                 onClick={() => setShowOverlay(false)}
               >
-                확인 — 역할 숙지 완료
+                Confirm — Role Understood
               </button>
             </div>
           </div>
         )}
         {!showOverlay && (
           <div className="flex items-center justify-center h-full text-gray-500 text-sm">
-            오버레이 닫힘 —{' '}
+            Overlay closed —{' '}
             <button className="ml-1 underline text-white cursor-pointer" onClick={() => setShowOverlay(true)}>
-              다시 열기
+              Reopen
             </button>
           </div>
         )}
@@ -135,7 +135,7 @@ function NightPhaseTab() {
               role === r ? 'bg-white text-black border-white' : 'bg-transparent text-gray-400 border-gray-600'
             }`}
           >
-            {r === 'mafia' ? '마피아' : r === 'citizen' ? '시민' : '기자'}
+            {r === 'mafia' ? 'Mafia' : r === 'citizen' ? 'Citizen' : 'Journalist'}
           </button>
         ))}
       </div>
@@ -159,10 +159,10 @@ function DayPhaseTab() {
   return (
     <div className="flex flex-col gap-3 max-w-[400px] mx-auto">
       <DayPhaseCard round={2} />
-      <EventCard variant="death" text="철수님이 마피아에 의해 제거되었습니다" />
-      <EventCard variant="saved" text="영희님이 구조되었습니다" />
-      <EventCard variant="nothing" text="조용한 밤이었습니다" />
-      <EventCard variant="investigate" text="수사 결과: 민준 → 마피아" />
+      <EventCard variant="death" text="James was eliminated by the Mafia" />
+      <EventCard variant="saved" text="Sarah was rescued" />
+      <EventCard variant="nothing" text="It was a quiet night" />
+      <EventCard variant="investigate" text="Investigation result: Mike → Mafia" />
     </div>
   )
 }
@@ -187,7 +187,7 @@ function VotePhaseTab() {
               subPhase === p ? 'bg-white text-black border-white' : 'bg-transparent text-gray-400 border-gray-600'
             }`}
           >
-            {p === 'vote' ? '투표' : p === 'last_defense' ? '최후변론' : '최종투표'}
+            {p === 'vote' ? 'Vote' : p === 'last_defense' ? 'Final Defense' : 'Final Vote'}
           </button>
         ))}
       </div>
@@ -226,7 +226,7 @@ function GameOverTab() {
               winner === w ? 'bg-white text-black border-white' : 'bg-transparent text-gray-400 border-gray-600'
             }`}
           >
-            {w === 'citizen' ? '시민 승리' : '마피아 승리'}
+            {w === 'citizen' ? 'Citizen Win' : 'Mafia Win'}
           </button>
         ))}
       </div>
@@ -238,11 +238,11 @@ function GameOverTab() {
 
 // ── Main DevPreview ──
 const TABS = [
-  { id: 'roles',    label: '역할 카드' },
-  { id: 'night',   label: '밤' },
-  { id: 'day',     label: '낮' },
-  { id: 'vote',    label: '투표' },
-  { id: 'gameover',label: '게임 종료' },
+  { id: 'roles',    label: 'Role Cards' },
+  { id: 'night',   label: 'Night' },
+  { id: 'day',     label: 'Day' },
+  { id: 'vote',    label: 'Vote' },
+  { id: 'gameover',label: 'Game Over' },
 ]
 
 export default function DevPreview() {
